@@ -9,9 +9,13 @@ class Calculator:
         return a * b
 
     def divide(self, a, b):
+        if b == 0:
+            raise ValueError("Cannot divide by zero!")
         return a / b
     
     def modulo(self, a, b):
+        if b == 0:
+            raise ValueError("Cannot divide by zero!")
         return a % b
 
 # Example usage:
@@ -23,3 +27,5 @@ if __name__ == "__main__":
     print("Example: multiplication: ", calc.multiply(2, 3))
     print("Example: division: ", calc.divide(10, 2))
     print("Example: modulo: ", calc.modulo(10, 3))
+    print("Example: modulo: ", calc.modulo(10, 0))
+    print("Example: division by zero: ", calc.divide(10, 0))
